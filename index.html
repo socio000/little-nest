@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LittleNest | Early Development & Communication Hub</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#a2eafa',
+                            DEFAULT: '#76e076', // THEME COLOR
+                            dark: '#5ac75a',
+                            deep: '#2f852f', // Darker green for text
+                            text: '#2d3748',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        display: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #76e076;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5ac75a;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2">
+                    <img src="1000038136-removebg-preview.png" alt="LittleNest Logo" class="h-16 w-auto">
+                    <div class="hidden md:block">
+                        <span class="text-2xl font-bold text-brand-deep block leading-none">LittleNest</span>
+                        <span class="text-xs text-gray-500 tracking-wider">Early Development & Communication Hub</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-brand-deep font-semibold transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-brand-deep font-semibold transition">About</a>
+                    <a href="#services" class="text-gray-600 hover:text-brand-deep font-semibold transition">Services</a>
+                    <a href="#founder" class="text-gray-600 hover:text-brand-deep font-semibold transition">Founder</a>
+                    <a href="#contact" class="px-5 py-2 bg-brand-DEFAULT text-green-900 font-bold rounded-full hover:bg-brand-dark hover:text-white transition shadow-lg transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none p-2">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 bg-white absolute top-full left-0 w-full shadow-lg px-6">
+                <a href="#home" class="block py-3 text-gray-600 hover:text-brand-deep border-b border-gray-100">Home</a>
+                <a href="#about" class="block py-3 text-gray-600 hover:text-brand-deep border-b border-gray-100">About</a>
+                <a href="#services" class="block py-3 text-gray-600 hover:text-brand-deep border-b border-gray-100">Services</a>
+                <a href="#founder" class="block py-3 text-gray-600 hover:text-brand-deep border-b border-gray-100">Founder</a>
+                <a href="#contact" class="block py-3 text-brand-deep font-bold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 pb-32 overflow-hidden bg-gradient-to-b from-green-50 to-white">
+        <!-- Decorative Background -->
+        <svg class="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 text-brand-DEFAULT opacity-10 w-1/2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.6,32.3C59,43.1,47.1,51.8,34.8,58.3C22.5,64.8,9.8,69.1,-3.7,75.5C-17.2,81.9,-31.5,90.4,-43.3,86.6C-55.1,82.8,-64.4,66.7,-72.3,51.8C-80.2,36.9,-86.7,23.2,-86.1,9.8C-85.5,-3.6,-77.8,-16.7,-68.6,-28.1C-59.4,-39.5,-48.7,-49.2,-37,-57.6C-25.3,-66,-12.6,-73.1,1.5,-75.7C15.6,-78.3,31.2,-76.4,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+
+        <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center">
+            <!-- Text Content -->
+            <div class="w-full md:w-1/2 mt-10 md:mt-0" data-aos="fade-right">
+                <span class="inline-block px-3 py-1 mb-4 text-sm font-semibold text-green-900 bg-green-200 rounded-full">Admissions Open 2025</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-6">
+                    A Safe Space Where Every Child <span class="text-brand-deep">Blossoms</span> in Their Own Way
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    We provide gentle developmental and communication support. Our approach combines play, empathy, and structured learning — helping children grow with joy, not pressure.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-3 bg-brand-DEFAULT text-green-900 font-bold rounded-full text-center hover:bg-brand-dark hover:text-white transition shadow-lg transform hover:-translate-y-1">
+                        Book a Consultation
+                    </a>
+                    <a href="#video-section" class="px-8 py-3 bg-white text-green-900 border-2 border-brand-DEFAULT font-bold rounded-full text-center hover:bg-green-50 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-play-circle"></i> Watch How We Work
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="w-full md:w-1/2 flex justify-center relative" data-aos="fade-left">
+                <!-- Replaced spaces with %20 to ensure link works -->
+                <div class="relative w-80 h-80 md:w-[500px] md:h-[500px]">
+                    <div class="absolute inset-0 bg-brand-DEFAULT rounded-full opacity-20 filter blur-3xl animate-pulse"></div>
+                    <img src="WhatsApp%20Image%202025-10-25%20at%2011.22.25%20AM.jpeg" alt="Happy Child Playing" class="relative z-10 w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2" data-aos="zoom-in">
+                    <!-- Interior Photo -->
+                    <img src="WhatsApp%20Image%202026-01-31%20at%2012.09.53%20AM.jpeg" alt="LittleNest Interior" class="rounded-xl shadow-xl w-full object-cover h-96 border-b-8 border-brand-DEFAULT">
+                    <p class="text-center text-sm text-gray-500 mt-2 italic">Our safe and nurturing play area</p>
+                </div>
+                <div class="w-full md:w-1/2" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About <span class="text-brand-DEFAULT">LittleNest</span></h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        At LittleNest, we believe every child has a unique rhythm of growth. With the right care, patience, and encouragement, every child can reach their full potential.
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        We provide gentle developmental and communication support for children who experience challenges in expression, understanding, or social interaction.
+                    </p>
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-brand-DEFAULT mt-6">
+                        <p class="font-semibold text-brand-deep italic">
+                            "LittleNest is not a clinic — it’s a nurturing environment built on trust, positivity, and personalised care."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus Areas / Services -->
+    <section id="services" class="py-20 bg-gray-50 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Focus Areas</h2>
+                <div class="h-1 w-20 bg-brand-DEFAULT mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-DEFAULT hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-green-100 text-brand-deep rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Communication Enrichment</h3>
+                    <p class="text-gray-600 text-sm">Engaging activities and guided play to help children express thoughts and emotions more confidently.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-yellow-400 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-500 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Social Skills Development</h3>
+                    <p class="text-gray-600 text-sm">Group play, stories, and peer interaction exercises to build social comfort and empathy.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-400 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Cognitive Stimulation</h3>
+                    <p class="text-gray-600 text-sm">Fun problem-solving games and tasks to boost attention, reasoning, and memory.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-purple-400 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-500 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Behavioural Support</h3>
+                    <p class="text-gray-600 text-sm">Positive reinforcement strategies to encourage focus, adaptability, and emotional balance.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-400 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-red-100 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Parental Guidance</h3>
+                    <p class="text-gray-600 text-sm">Practical, experience-based guidance to help parents nurture growth at home.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-400 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-500 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Inclusive Environment</h3>
+                    <p class="text-gray-600 text-sm">A caring, joyful space that welcomes all children and celebrates their individual pace of learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="py-20 bg-brand-DEFAULT">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-900">Our Approach</h2>
+            <!-- Cards now white with dark text for readability -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-gamepad text-4xl mb-4 text-brand-DEFAULT"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Play-Based Learning</h4>
+                    <p class="text-sm text-gray-600">Turning learning into fun through creative and interactive sessions.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-user-check text-4xl mb-4 text-brand-DEFAULT"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Individual Focus</h4>
+                    <p class="text-sm text-gray-600">Each child’s strengths guide our methods — no one-size-fits-all.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-seedling text-4xl mb-4 text-brand-DEFAULT"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Holistic Growth</h4>
+                    <p class="text-sm text-gray-600">Emotional, social, and communication skills developed together.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-hands-helping text-4xl mb-4 text-brand-DEFAULT"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Empathy First</h4>
+                    <p class="text-sm text-gray-600">Building trust through gentle communication and a non-judgmental approach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section id="video-section" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">See LittleNest in Action</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Animated Explainer -->
+                <div class="rounded-xl overflow-hidden shadow-2xl" data-aos="fade-right">
+                    <div class="bg-gray-100 p-4 border-b">
+                        <h3 class="font-bold text-gray-700"><i class="fas fa-film text-brand-DEFAULT mr-2"></i>Why LittleNest?</h3>
+                    </div>
+                    <video controls class="w-full">
+                        <source src="ad_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Kids Playing Real Footage -->
+                <div class="rounded-xl overflow-hidden shadow-2xl" data-aos="fade-left">
+                    <div class="bg-gray-100 p-4 border-b">
+                        <h3 class="font-bold text-gray-700"><i class="fas fa-smile text-brand-DEFAULT mr-2"></i>Joyful Learning Moments</h3>
+                    </div>
+                    <video controls class="w-full">
+                        <source src="WhatsApp%20Video%202026-01-31%20at%2012.09.52%20AM.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="py-20 bg-green-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 relative h-96 md:h-auto">
+                        <img src="founder.jpeg" alt="Priyanka Gupta" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 md:hidden">
+                            <div class="text-white">
+                                <h3 class="text-2xl font-bold">Priyanka Gupta</h3>
+                                <p class="text-sm">Founder & Psychologist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Meet the Founder</h2>
+                        <h3 class="text-xl font-semibold text-brand-deep mb-4">Priyanka Gupta</h3>
+                        <p class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wide">M.A. (Psychology) | Former Clinical Trainee, CRC Gorakhpur</p>
+                        
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Priyanka’s experience at the <strong>Composite Regional Centre (CRC), Gorakhpur</strong> — a Government of India institution dedicated to child rehabilitation and development — inspired her to create a space where children could grow beyond their challenges with love and encouragement.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            At LittleNest, she aims to bridge developmental gaps through understanding, compassion, and structured engagement — helping each child take confident steps toward a brighter tomorrow.
+                        </p>
+                        
+                        <div class="mt-8">
+                            <img src="1000038136-removebg-preview.png" alt="Signature Logo" class="h-16 opacity-50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flyers / Gallery Mini -->
+    <section class="py-10 bg-white border-b">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8">Admissions Open 2025</h2>
+            <div class="flex justify-center" data-aos="zoom-in">
+                <img src="flyer_final.jpg" alt="Admission Flyer" class="max-w-full md:max-w-md rounded-lg shadow-lg border border-gray-200">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 text-white py-20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-brand-DEFAULT"></div>
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-brand-DEFAULT">Get In Touch</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-4 text-brand-DEFAULT"></i>
+                            <div>
+                                <p class="text-gray-400 text-sm">Call Us</p>
+                                <a href="tel:8115968963" class="text-lg font-semibold hover:text-brand-DEFAULT transition">8115968963</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4 text-brand-DEFAULT"></i>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email Us</p>
+                                <a href="mailto:littlenestmrj@gmail.com" class="text-lg font-semibold hover:text-brand-DEFAULT transition">littlenestmrj@gmail.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-4 text-brand-DEFAULT"></i>
+                            <div>
+                                <p class="text-gray-400 text-sm">Visit Us</p>
+                                <p class="font-semibold">Near Kaka Marriage Hall, Shastri Nagar,<br>Maharajganj, 273303</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8">
+                        <a href="https://maps.app.goo.gl/5UMcBic955SGXVhJ9" target="_blank" class="inline-flex items-center px-6 py-3 bg-brand-DEFAULT text-white font-bold rounded-lg hover:bg-brand-dark transition">
+                            <i class="fas fa-location-arrow mr-2"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social / QR -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-6 text-brand-DEFAULT">Connect on Instagram</h3>
+                    <div class="flex flex-col items-center md:items-start">
+                        <div class="bg-white p-2 rounded-lg inline-block mb-4">
+                            <!-- Using the uploaded QR Code with fixed spaces in filename -->
+                            <img src="ChatGPT%20Image%20Oct%2022,%202025,%2008_34_34%20PM.jpg" alt="Instagram QR Code" class="w-40 h-40">
+                        </div>
+                        <a href="https://instagram.com/littlenest_mrj" class="text-xl font-semibold hover:text-brand-DEFAULT transition">
+                            <i class="fab fa-instagram mr-2"></i> @littlenest_mrj
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brand / Footer Note -->
+                <div>
+                    <img src="1000038136-removebg-preview.png" alt="LittleNest" class="h-20 mb-6 bg-white rounded p-2">
+                    <p class="text-gray-400 mb-6">
+                        Helping children grow beyond their challenges with love and encouragement. A safe space where every child blossoms.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social Icons -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-DEFAULT transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/littlenest_mrj" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-DEFAULT transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-DEFAULT transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 LittleNest Early Development & Communication Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
